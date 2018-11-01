@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" >
+    <!-- Vue.js -->
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+    
+    <title>cnbattle</title>
+  </head>
+  <body>
+    <div  class="container" id="app">
+            <h2>{{ name }}</h2>
+    </div>
+ </body>
+</html>
+
+<script>
+    var app = new Vue({
+        el:'#app',
+        data:{
+            name:'cnbattle'
+        },
+        methods: {
+            click: function (event) {
+                this.content = '<a href="'+this.link+'">'+this.title+'</a>'
+            }   
+        }
+    })
+</script><
