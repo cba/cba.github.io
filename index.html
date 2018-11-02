@@ -19,7 +19,7 @@
         <h2>{{ name }}</h2>
         <ul>
             <li v-for="func in funcs">
-                <a href="{{ func.url }}">{{ func.title}}</a>
+                <a :href="site + func.url">{{ func.title}}</a>
             </li>
         </ul>
     </div>
@@ -30,17 +30,17 @@
         el: '#app',
         data: {
             name: 'cnbattle',
+            site: 'https://cba.github.io',
             funcs: [{
                 'title': '输入标题链接生成a标签代码',
                 'url': '/handle-a.html'
             }]
         },
         methods: {
-            click: function (event) {
-                this.content = '<a href="' + this.link + '">' + this.title + '</a>'
-            }
+            // click: function (event) {
+            //     this.content = '<a href="' + this.link + '">' + this.title + '</a>'
+            // }
         }
     })
 </script>
-
 </html>
