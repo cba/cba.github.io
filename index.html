@@ -1,34 +1,46 @@
 <!doctype html>
 <html>
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <!-- Vue.js -->
     <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
-    
+
     <title>cnbattle</title>
-  </head>
-  <body>
-    <div  class="container" id="app">
-            <h2>{{ name }}</h2>
+</head>
+
+<body>
+    <div class="container" id="app">
+        <h2>{{ name }}</h2>
+        <ul>
+            <li v-for="func in funcs">
+                <a href="{{ func.url }}">{{ func.title}}</a>
+            </li>
+        </ul>
     </div>
- </body>
-</html>
+</body>
 
 <script>
     var app = new Vue({
-        el:'#app',
-        data:{
-            name:'cnbattle'
+        el: '#app',
+        data: {
+            name: 'cnbattle',
+            funcs: [{
+                'title': '输入标题链接生成a标签代码',
+                'url': '/handle-a.html'
+            }]
         },
         methods: {
             click: function (event) {
-                this.content = '<a href="'+this.link+'">'+this.title+'</a>'
-            }   
+                this.content = '<a href="' + this.link + '">' + this.title + '</a>'
+            }
         }
     })
-</script><
+</script>
+
+</html>
