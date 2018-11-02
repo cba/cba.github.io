@@ -29,7 +29,7 @@
                             <small class="text-muted"></small>
                           </fieldset>
                 </form>
-        <p class="lead">复制后面红色代码: <code>{{ content }}</code></p>
+        <p class="lead">复制后面红色代码:  <br> <code>{{ content }}</code></p>
     </div>
  </body>
 </html>
@@ -44,6 +44,14 @@
         },
         methods: {
             click: function (event) {
+                if(this.link == ""){
+                    this.content = '请输入链接'
+                    return
+                }
+                if(this.title == ""){
+                    this.content = '请输入标题'
+                    return
+                }
                 this.content = '<a href="'+this.link+'">'+this.title+'</a>'
             }   
         }
